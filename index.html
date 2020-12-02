@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <title>yook dashboard</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js.js"></script>
+
+
+</head>
+<body>
+    <div class="grid">
+        <header class="header">
+          <i class="fas fa-bars header__menu"></i>
+          <div class="header__search">
+            <input class="header__input" placeholder="Buscar..." />
+          </div>
+          <div class="header__avatar">
+            <div class="dropdown">
+              <ul class="dropdown__list">
+                <li class="dropdown__list-item">
+                  <span class="dropdown__icon"><i class="far fa-user"></i></span>
+                  <span class="dropdown__title">Mi Perfil</span>
+                </li>
+                
+                <li class="dropdown__list-item">
+                    <span class="dropdown__icon"><i class="fas fa-sign-out-alt"></i></span>
+                    <span class="dropdown__title">Cerrar Sesion</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+      
+        <aside class="sidenav">
+          <div class="sidenav__brand">
+            <i class="fas fa-feather-alt sidenav__brand-icon"></i>
+            <a class="sidenav__brand-link" href="#">YOOK<span class="text-light">dashboard</span></a>
+            <i class="fas fa-times sidenav__brand-close"></i>
+          </div>
+          <div class="sidenav__profile">
+            <div class="sidenav__profile-avatar"></div>
+            <div class="sidenav__profile-title text-light">Romina</div>
+          </div>
+          <div class="row row--align-v-center row--align-h-center">
+            <ul class="navList">
+              <li class="navList__heading">Mi Perfil<i class="far fa-file-alt"></i></li>
+                <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-briefcase-medical"></i></span>
+                  <span class="navList__subheading-title">Configuracion</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">Actualizar Informacion</li>
+                  <li class="subList__item">Cambiar Foto</li>
+                  <li class="subList__item">Contrato</li>
+                  <li class="subList__item">Contrasena</li>
+                </ul>
+              </li>
+              <li>
+
+                <!--  
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-plane-departure"></i></span>
+                  <span class="navList__subheading-title">travel</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">domestic</li>
+                  <li class="subList__item">foreign</li>
+                  <li class="subList__item">misc</li>
+                </ul>
+              </li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="far fa-angry"></i></span>
+                  <span class="navList__subheading-title">taxes</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">current</li>
+                  <li class="subList__item">archives</li>
+                </ul>
+              </li>
+      
+              <li class="navList__heading">messages<i class="far fa-envelope"></i></li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-envelope"></i></span>
+                  <span class="navList__subheading-title">inbox</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">primary</li>
+                  <li class="subList__item">social</li>
+                  <li class="subList__item">promotional</li>
+                </ul>
+              </li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-eye"></i></span>
+                  <span class="navList__subheading-title">unread</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">primary</li>
+                  <li class="subList__item">social</li>
+                  <li class="subList__item">promotional</li>
+                </ul>
+              </li>
+               <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-book-open"></i></span>
+                  <span class="navList__subheading-title">archives</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">primary</li>
+                  <li class="subList__item">social</li>
+                  <li class="subList__item">promotional</li>
+                </ul>
+              </li>
+      
+              <li class="navList__heading">photo album<i class="far fa-image"></i></li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-mountain"></i></span>
+                  <span class="navList__subheading-title">vacation</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">cambodia</li>
+                  <li class="subList__item">new york</li>
+                </ul>
+              </li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-wine-glass-alt"></i></span>
+                  <span class="navList__subheading-title">anniversary</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">dive trip</li>
+                  <li class="subList__item">hikathon</li>
+                  <li class="subList__item">buffalo river</li>
+                </ul>
+              </li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-graduation-cap"></i></span>
+                  <span class="navList__subheading-title">university</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">wild horse saloon</li>
+                  <li class="subList__item">service corps</li>
+                  <li class="subList__item">graduation</li>
+                  <li class="subList__item">internships</li>
+                </ul>
+              </li>
+      
+              <li class="navList__heading">statistics<i class="fas fa-chart-bar"></i></li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-credit-card"></i></span>
+                  <span class="navList__subheading-title">finances</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">mortgage</li>
+                  <li class="subList__item">investments</li>
+                  <li class="subList__item">spend log</li>
+                  <li class="subList__item">owed</li>
+                </ul>
+              </li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-phone"></i></span>
+                  <span class="navList__subheading-title">call stats</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">last month</li>
+                  <li class="subList__item">bi-weekly</li>
+                  <li class="subList__item">yesterday</li>
+                  <li class="subList__item">today</li>
+                </ul>
+              </li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-plane"></i></span>
+                  <span class="navList__subheading-title">trip logs</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">amsterdam</li>
+                  <li class="subList__item">buenos aires</li>
+                  <li class="subList__item">cambodia</li>
+                  <li class="subList__item">greenland</li>
+                </ul>
+              </li>
+              
+              <li class="navList__heading">Events<i class="fas fa-calendar-alt"></i></li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-wine-glass-alt"></i></span>
+                  <span class="navList__subheading-title">weddings</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">past</li>
+                  <li class="subList__item">present</li>
+                  <li class="subList__item">future</li>
+                </ul>
+              </li>
+              <li>
+                <div class="navList__subheading row row--align-v-center">
+                  <span class="navList__subheading-icon"><i class="fas fa-school"></i></span>
+                  <span class="navList__subheading-title">playdates</span>
+                </div>
+                <ul class="subList subList--hidden">
+                  <li class="subList__item">weirdos</li>
+                  <li class="subList__item">smarties</li>
+                  <li class="subList__item">nerds</li>
+                </ul>
+              </li>
+              <li>
+                    <div class="navList__subheading row row--align-v-center">
+                      <span class="navList__subheading-icon"><i class="fas fa-users"></i></span>
+                      <span class="navList__subheading-title">networking</span>
+                    </div>
+                    <ul class="subList subList--hidden">
+                      <li class="subList__item">tech</li>
+                      <li class="subList__item">automotive</li>
+                      <li class="subList__item">UX research</li>
+                      <li class="subList__item">development</li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+          </div>
+        </aside>
+      
+        <main class="main">
+          <div class="main-header">
+            <div class="main-header__intro-wrapper">
+              <div class="main-header__welcome">
+                <div class="main-header__welcome-title text-light">Bienvenido, <strong>Romina</strong></div>
+                <div class="main-header__welcome-subtitle text-light">Como estas hoy?</div>
+              </div>
+              <div class="quickview">
+                
+                <div class="quickview__item">
+                  <div class="quickview__item-total">14</div>
+                  <div class="quickview__item-description">
+                    <i class="far fa-comment"></i>
+                    <span class="text-light">Afiliados</span>
+                  </div>
+                </div>
+                <div class="quickview__item">
+                  <div class="quickview__item-total">5</div>
+                  <div class="quickview__item-description">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="text-light">Recientes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-overview">
+            <div class="overviewCard">
+              <div class="overviewCard-icon overviewCard-icon--document">
+                 <i class="far fa-file-alt"></i>
+              </div>
+              <div class="overviewCard-description">
+                <h3 class="overviewCard-title text-light">Mis <strong style="font-weight: bold;">Afiliados</strong></h3>
+                <p class="overviewCard-subtitle">14</p>
+              </div>
+            </div>
+            <div class="overviewCard">
+              <div class="overviewCard-icon overviewCard-icon--calendar">
+                 <i class="far fa-calendar-check"></i>
+              </div>
+              <div class="overviewCard-description">
+                <h3 class="overviewCard-title text-light">Mis <strong style="font-weight: bold;">Puntos</strong></h3>
+                <p class="overviewCard-subtitle">50</p>
+              </div>
+            </div>
+            <div class="overviewCard">
+              <div class="overviewCard-icon overviewCard-icon--mail">
+                 <i class="far fa-envelope"></i>
+              </div>
+              <div class="overviewCard-description">
+                <h3 class="overviewCard-title text-light">Mis <strong style="font-weight: bold;">Ingresos</strong></h3>
+                <p class="overviewCard-subtitle">100</p>
+              </div>
+            </div>
+           
+          </div> <!-- /.main__overview -->
+
+          <!--
+          <div class="main__cards">
+            <div class="card">
+              <div class="card__header">
+                <div class="card__header-title text-light">Your <strong>Events</strong>
+                  <a href="#" class="card__header-link text-bold">View All</a>
+                </div>
+                <div class="settings">
+                  <div class="settings__block"><i class="fas fa-edit"></i></div>
+                  <div class="settings__block"><i class="fas fa-cog"></i></div>
+                </div>
+              </div>
+              <div class="card__main">
+                <div class="card__row">
+                  <div class="card__icon"><i class="fas fa-gift"></i></div>
+                  <div class="card__time">
+                    <div>today</div>
+                  </div>
+                  <div class="card__detail">
+                    <div class="card__source text-bold">Jonathan G</div>
+                    <div class="card__description">Going away party at 8:30pm. Bring a friend!</div>
+                    <div class="card__note">1404 Gibson St</div>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__icon"><i class="fas fa-plane"></i></div>
+                  <div class="card__time">
+                    <div>Tuesday</div>
+                  </div>
+                  <div class="card__detail">
+                    <div class="card__source text-bold">Matthew H</div>
+                    <div class="card__description">Flying to Bora Bora at 4:30pm</div>
+                    <div class="card__note">Delta, Gate 27B</div>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__icon"><i class="fas fa-book"></i></div>
+                  <div class="card__time">
+                    <div>Thursday</div>
+                  </div>
+                  <div class="card__detail">
+                    <div class="card__source text-bold">National Institute of Science</div>
+                    <div class="card__description">Join the institute for an in-depth look at Stephen Hawking</div>
+                    <div class="card__note">7:30pm, Carnegie Center for Science</div>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__icon"><i class="fas fa-heart"></i></div>
+                  <div class="card__time">
+                    <div>Friday</div>
+                  </div>
+                  <div class="card__detail">
+                    <div class="card__source text-bold">24th Annual Heart Ball</div>
+                    <div class="card__description">Join us and contribute to your favorite local charity.</div>
+                    <div class="card__note">6:45pm, Austin Convention Ctr</div>
+                  </div>
+                </div>
+                <div class="card__row">
+                  <div class="card__icon"><i class="fas fa-heart"></i></div>
+                  <div class="card__time">
+                    <div>Saturday</div>
+                  </div>
+                  <div class="card__detail">
+                    <div class="card__source text-bold">Little Rock Air Show</div>
+                    <div class="card__description">See the Blue Angels fly with roaring thunder</div>
+                    <div class="card__note">11:00pm, Jacksonville Airforce Base</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="card">
+              <div class="card__header">
+                <div class="card__header-title text-light">Afiliados <strong>Recientes</strong></div> 
+              </div>
+              <div class="card">
+                <div class="documents">
+                  <div class="document">
+                    <div class="document__img"></div>
+                    <div class="document__title">Jonh Doe</div>
+                    
+                  </div>
+                  <div class="document">
+                    <div class="document__img"></div>
+                    <div class="document__title">Jonh Doe</div>
+                    
+                  </div>
+                  <div class="document">
+                    <div class="document__img"></div>
+                    <div class="document__title">Jonh Doe</div>
+                    
+                  </div>
+                  <div class="document">
+                    <div class="document__img"></div>
+                    <div class="document__title">Jonh Doe</div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__header">
+                <div class="card__header-title text-light">Afiliados por <strong>Nivel</strong></div>
+              </div>
+              <div class="card">
+                <div class="documents">
+                
+                  <div class="document">
+                    <div class="document__img1"></div>
+                    <div class="document__title">1</div>
+                    
+                  </div>
+
+                  <div class="document">
+                    <div class="document__img2"></div>
+                    <div class="document__title">2</div>
+                    
+                  </div>
+
+                  <div class="document">
+                    <div class="document__img3"></div>
+                    <div class="document__title">0</div>
+                    
+                  </div>
+
+                  <div class="document">
+                    <div class="document__img4"></div>
+                    <div class="document__title">0</div>    
+                  </div>
+
+                  <div class="document">
+                    <div class="document__img5"></div>
+                    <div class="document__title">0</div> 
+                  </div>
+
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div> <!-- /.main-cards -->
+        </main>
+      
+        <footer class="footer">
+          <p><span class="footer__copyright">&copy;</span> 2020 </p>
+          <p> All rights reserved <i class="fas fa-heart footer__icon"></i> by <a href="https://www.facebook.com/Yo%C3%B3K-104021790941640" class="footer__signature"> YOOK </a></p>
+        </footer>
+      </div>
+
+
+      <script type="text/javascript" src="js.js"></script>
+</body>
+</html>
